@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            margin: 10px;
+        }
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+   <fieldset>
+    <legend>Registration Form</legend>
+    <form>
+         <input type="text" name="name" placeholder="Enter Your Name" id="name">
+        <input type="text" name="email" placeholder="Enter Your Email" id="email">
+        <input type="password" name="password" placeholder="Enter Your password" id="password">
+         <input type="password" name="confirm-password" placeholder="Confirm Your password" id="confirm-password">
+         <button type="submit">Submit</button>
+    </form>
+
+   </fieldset>
+     
+   <!-- <div class="output">
+        <h1>Users Details:</h1>
+   </div> -->
+
+   <script>
+       
+       let form = document.querySelector('form');
+       let name_box = document.querySelector('#name');
+       let email_box = document.querySelector('#email');
+       let password_box = document.querySelector('#password');
+       let confirm_password_box = document.querySelector('#confirm-password');
+       let btn = document.querySelector('button');
+
+    //    let output = document.querySelector('.output');
+
+    //    btn.addEventListener("click", validateForm)
+
+     form.addEventListener("submit", validateForm)
+
+
+     let emailArray = []
+       function validateForm(eventDetails){
+        //   console.log(eventDetails); 
+            eventDetails.preventDefault();
+            let name = name_box.value;
+            let email = email_box.value;
+            let password = password_box.value;
+            let confirm_password = confirm_password_box.value;
+
+            // console.log(name,email,password,confirm_password);
+
+            // let divElement = document.createElement('div');
+            // divElement.innerText = `Name: ${name} Email: ${email} Password: ${password} Confirm Password: ${confirm_password}`;
+            // document.body.append(divElement)
+            // output.prepend(divElement)
+
+            let userData = {
+                name: name,
+                email: email,
+                password: password,
+            }
+
+            // let userData = {name, email, password}
+
+            let userDataJson = JSON.stringify(userData);
+
+            // localStorage.setItem("user", userDataJson);
+            emailArray.push(email);
+            let emailArrayJson = JSON.stringify(emailArray);
+            localStorage.setItem("email", emailArrayJson);
+
+
+            // localStorage.setItem("email", email);
+
+            
+            
+       }
+
+    //    obj = {
+    //     a: 10
+    //    }
+
+    //    obj.a = 20 
+    //    obj.a = 4
+   </script>
+    
+</body>
+</html>
