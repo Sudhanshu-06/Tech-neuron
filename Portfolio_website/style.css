@@ -42,6 +42,20 @@ nav ul li a{
     font-size: 18px;
     position: relative;
 }
+nav ul li a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: blue;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4s;
+}
+nav ul li a:hover:after{
+    width: 100%;
+}
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;
@@ -52,4 +66,49 @@ nav ul li a{
 }
 .header-text span{
     color: rgb(67,67,231);
+}
+/*
+about section
+*/
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+
+}
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: "";
+    width:0;
+    height: 4px;
+    background-color: rgb(67,67,231);
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    transition: 0.4s;
+}
+.tab-links .active-link::after{
+    width: 100%;
+
 }
