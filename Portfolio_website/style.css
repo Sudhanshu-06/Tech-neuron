@@ -152,5 +152,15 @@ about section
 }
 .services-list div:hover{
     background: yellowgreen;
-    transform:translate(-20px);
+    transform:translate(-15px);
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+
 }
